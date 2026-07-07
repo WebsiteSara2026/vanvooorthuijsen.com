@@ -246,14 +246,11 @@ export function SplitBrain() {
         <div className="mx-auto max-w-6xl px-6 py-20 text-center md:py-28">
           <h2 className="text-balance font-serif text-4xl font-semibold leading-tight md:text-6xl">{t.cta.title}</h2>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-lg leading-relaxed opacity-80">{t.cta.body}</p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-9 flex items-center justify-center">
             <a
               href={`mailto:${t.cta.email}`}
-              className="rounded-full bg-background px-7 py-3 text-sm font-semibold text-foreground transition-opacity hover:opacity-90"
+              className="font-serif text-2xl font-medium underline underline-offset-8 transition-opacity hover:opacity-80 md:text-3xl"
             >
-              {t.cta.button}
-            </a>
-            <a href={`mailto:${t.cta.email}`} className="text-sm underline underline-offset-4 opacity-80 hover:opacity-100">
               {t.cta.email}
             </a>
           </div>
