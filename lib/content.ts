@@ -57,7 +57,7 @@ export const content: Record<Lang, Content> = {
   en: {
     nav: { both: "Both halves", contact: "Get in touch" },
     hero: {
-      kicker: "Chris van Voorthuijsen — Freelance consultant",
+      kicker: "Chris van Voorthuijsen",
       tagline: "Clear, Simple, Result.",
       title: "One brain. Two halves.",
       titleAccentCreative: "creative",
@@ -132,7 +132,7 @@ export const content: Record<Lang, Content> = {
   nl: {
     nav: { both: "Beide helften", contact: "Neem contact op" },
     hero: {
-      kicker: "Chris van Voorthuijsen — Freelance consultant",
+      kicker: "Chris van Voorthuijsen",
       tagline: "Clear, Simple, Result.",
       title: "Eén brein. Twee helften.",
       titleAccentCreative: "creatieve",
