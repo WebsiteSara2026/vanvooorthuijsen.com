@@ -16,7 +16,7 @@ type SideContent = {
   hireLine: string
 }
 
-type Content = {
+export type Content = {
   nav: {
     both: string
     contact: string
@@ -53,7 +53,9 @@ type Content = {
   }
 }
 
-export const content: Record<Lang, Content> = {
+export type SiteContent = Record<Lang, Content>
+
+export const content: SiteContent = {
   en: {
     nav: { both: "Both halves", contact: "Get in touch" },
     hero: {
