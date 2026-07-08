@@ -2,12 +2,12 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { content, type Lang, type SideKey } from "@/lib/content"
+import { content as defaultContent, type Lang, type SideKey, type SiteContent } from "@/lib/content"
 import { cn } from "@/lib/utils"
 
 type Selection = SideKey | "both"
 
-export function SplitBrain() {
+export function SplitBrain({ content = defaultContent }: { content?: SiteContent }) {
   const [lang, setLang] = useState<Lang>("en")
   const [hovered, setHovered] = useState<SideKey | null>(null)
   const [selected, setSelected] = useState<Selection>("analytical")
