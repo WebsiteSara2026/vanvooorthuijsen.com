@@ -13,10 +13,13 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
     autoSignIn: true,
-    // No public sign-up: the admin account is seeded via a script.
+    // No public sign-up: the single admin account has been seeded.
     disableSignUp: true,
   },
   trustedOrigins: [
+    ...(process.env.NODE_ENV === "development"
+      ? ["http://localhost:3000", `http://localhost:${process.env.PORT ?? 3000}`]
+      : []),
     ...(process.env.V0_RUNTIME_URL ? [process.env.V0_RUNTIME_URL] : []),
     ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
     ...(process.env.VERCEL_PROJECT_PRODUCTION_URL
