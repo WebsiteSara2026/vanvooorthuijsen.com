@@ -111,6 +111,12 @@ export function AdminEditor({ initial }: { initial: SiteContent }) {
           </div>
           <div className="flex items-center gap-2">
             <a
+              href="/admin/messages"
+              className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
+            >
+              Messages
+            </a>
+            <a
               href="/"
               target="_blank"
               rel="noreferrer"

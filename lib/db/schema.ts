@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, boolean, jsonb, integer } from "drizzle-orm/pg-core"
+import { pgTable, text, timestamp, boolean, jsonb, integer, serial } from "drizzle-orm/pg-core"
 
 // --- Better Auth required tables -------------------------------------------
 // Column names are camelCase to match Better Auth's defaults. Do not rename.
@@ -61,4 +61,15 @@ export const siteContent = pgTable("site_content", {
   id: integer("id").primaryKey().default(1),
   data: jsonb("data").notNull(),
   updatedAt: timestamp("updatedAt").notNull().defaultNow(),
+})
+
+// Contact form submissions. Public form inserts; admin reads.
+export const contactMessage = pgTable("contact_message", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  message: text("message").notNull(),
+  emailStatus: text("emailStatus").notNull().default("pending"),
+  read: boolean("read").notNull().default(false),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
 })
