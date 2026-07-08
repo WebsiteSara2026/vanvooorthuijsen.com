@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { content as defaultContent, type Lang, type SideKey, type SiteContent } from "@/lib/content"
 import { cn } from "@/lib/utils"
+import { ContactForm } from "@/components/contact-form"
 
 type Selection = SideKey | "both"
 
@@ -246,10 +247,13 @@ export function SplitBrain({ content = defaultContent }: { content?: SiteContent
         <div className="mx-auto max-w-6xl px-6 py-20 text-center md:py-28">
           <h2 className="text-balance font-serif text-4xl font-semibold leading-tight md:text-6xl">{t.cta.title}</h2>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-lg leading-relaxed opacity-80">{t.cta.body}</p>
-          <div className="mt-9 flex items-center justify-center">
+
+          <ContactForm lang={lang} />
+
+          <div className="mt-10 flex items-center justify-center">
             <a
               href={`mailto:${t.cta.email}`}
-              className="font-serif text-2xl font-medium underline underline-offset-8 transition-opacity hover:opacity-80 md:text-3xl"
+              className="text-sm underline underline-offset-4 opacity-70 transition-opacity hover:opacity-100"
             >
               {t.cta.email}
             </a>
