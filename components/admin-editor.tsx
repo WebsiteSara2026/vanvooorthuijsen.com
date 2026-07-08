@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { authClient } from "@/lib/auth-client"
 import { saveContent } from "@/app/actions/content"
+import { ChangePassword } from "@/components/change-password"
 import type { Lang, SideKey, SiteContent } from "@/lib/content"
 import { cn } from "@/lib/utils"
 
@@ -232,6 +233,8 @@ export function AdminEditor({ initial }: { initial: SiteContent }) {
         <Section title="Footer">
           <Field label="Rights text" value={t.footer.rights} onChange={(v) => update((d) => (d.footer.rights = v))} />
         </Section>
+
+        <ChangePassword />
 
         <div className="flex justify-end pb-12">
           <button
